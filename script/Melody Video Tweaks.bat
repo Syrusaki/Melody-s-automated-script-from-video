@@ -233,7 +233,7 @@ if "%choice%"=="1" (
     echo Downloading XML Profile...
 	timeout /t 1
     REM Command to download XML Profile
-	curl -g -k -L -# -o "%temp%\Melody.xml" "https://cdn.discordapp.com/attachments/925872253487444059/1213140947580223488/Melody.xml?ex=65f4648c&is=65e1ef8c&hm=753ada644b414741cb67575c816c935615fc98df0bbd5731f5fb6ef475eb98ae&"
+	curl -g -k -L -# -o "%temp%\Melody.xml" "https://cdn.discordapp.com/attachments/925872253487444059/1216836400574500884/Melody.xml?ex=6601d635&is=65ef6135&hm=763e4097046624c0a7745c31396c0aa460f863e3d35919d3babfdd61c3054620&"
 if not exist "%temp%\Melody.xml" (
     @echo Error: Failed to download XMP Profile.
     pause
