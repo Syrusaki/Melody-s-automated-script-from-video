@@ -139,6 +139,13 @@ del /F /Q C:\defender.bat
 cls
 
 call :melodyLogo
+echo Uninstalling OneDrive if exist...
+REM (Thx for Amitxv)
+timeout /t 2 >nul
+for %a in ("SysWOW64" "System32") do (if exist "%windir%\%~a\OneDriveSetup.exe" ("%windir%\%~a\OneDriveSetup.exe" /uninstall)) && reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f > nul 2>&1
+cls
+
+call :melodyLogo
 echo Choose a browser to download:
 echo 1. Thorium
 echo 2. Firefox Mercury
@@ -604,8 +611,8 @@ pause > nul
 del /F /Q %temp%\PolicyPlus.exe
 
 call :melodyLogo
-echo Finished... Rebooting
-timeout /t 5 /nobreak >nul
+echo Finished... Restart computer to make changes
+pause > nul
 :melodyLogo
 cls
 echo  .--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--. 
