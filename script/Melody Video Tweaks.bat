@@ -314,7 +314,7 @@ echo 0. No
 set /p choice=Enter the number of the desired option and press Enter: 
 
 if "%choice%"=="1" (
-    powershell bcdedit /set nx AlwaysOn >nul
+    powershell bcdedit /set nx optout >nul
 )
 ) else if "%choice%"=="0" (
     powershell bcdedit /set nx AlwaysOff >nul
