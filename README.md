@@ -10,6 +10,7 @@ I recommend installing Windows without the internet to avoid creating a profile 
 - Enables PowerShell unrestricted mode.
 - Installs DirectX Graphic Tool.
 - Disables Windows Update and related processes.
+- Disables Windows Defender and related processes.
 - Allows the user to choose and install a browser (Thorium, Firefox Mercury, or Brave).
 - Offers the option to install OpenShell and apply Melody's profile.
 - Optimizes mouse and keyboard settings.
@@ -29,7 +30,7 @@ I recommend installing Windows without the internet to avoid creating a profile 
 2. Run the script as an administrator.
 3. Follow the on-screen instructions.
 4. Reboot the system after the script finishes for changes to take effect.
-5. On boot, a CMD prompt will appear to finalize the script, wait for it to finish.
+5. On boot, a CMD prompt will appear to finalize the script, wait for it to finish and reboot again
 
 ## Disclaimer
 - Use this script at your own risk. Always ensure you have backups of important data before making system changes.
