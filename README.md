@@ -11,6 +11,7 @@ I recommend installing Windows without the internet to avoid creating a profile 
 - Installs DirectX Graphic Tool.
 - Disables Windows Update and related processes.
 - Disables Windows Defender and related processes.
+- Uninstall OneDrive.
 - Allows the user to choose and install a browser (Thorium, Firefox Mercury, or Brave).
 - Offers the option to install OpenShell and apply Melody's profile.
 - Optimizes mouse and keyboard settings.
