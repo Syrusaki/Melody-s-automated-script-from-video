@@ -33,6 +33,11 @@ I recommend installing Windows without the internet to avoid creating a profile 
 4. Reboot the system after the script finishes for changes to take effect.
 5. On boot, a CMD prompt will appear to finalize the script, wait for it to finish and reboot again
 
+## Usage tutorial in video
+<video width="320" height="240" controls>
+<source src="https://github.com/Syrusaki/Melody-s-automated-script-from-video/blob/main/video/tutorial%20in%20video.mp4" type="video/mp4">
+</video>
+
 ## Disclaimer
 - Use this script at your own risk. Always ensure you have backups of important data before making system changes.
 - The script may have different effects depending on your system configuration and version.
