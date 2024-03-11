@@ -26,7 +26,7 @@ I recommend installing Windows without the internet to avoid creating a profile 
 - Optimizes power plan settings.
 
 ## Usage
-1. Clone or download the script.
+1. Clone or download the script and regedit.
 2. Run the script as an administrator.
 3. Follow the on-screen instructions.
 4. Reboot the system after the script finishes for changes to take effect.
