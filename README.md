@@ -35,7 +35,7 @@ I recommend installing Windows without the internet to avoid creating a profile 
 5. On boot, a CMD prompt will appear to finalize the script, wait for it to finish and reboot again
 
 ## Usage in video
-[video version](https://youtu.be/fBckuUH2ITQ)
+[video tutorial](https://youtu.be/fBckuUH2ITQ)
 
 ## Disclaimer
 - Use this script at your own risk. Always ensure you have backups of important data before making system changes.
