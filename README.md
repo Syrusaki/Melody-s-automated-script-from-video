@@ -34,11 +34,12 @@ I recommend installing Windows without the internet to avoid creating a profile 
 - Use this script at your own risk. Always ensure you have backups of important data before making system changes.
 - The script may have different effects depending on your system configuration and version.
 
-## Softwares credits
-[abbodi1406](https://github.com/abbodi1406) from Visual C++ reddist
+## Software credits
+[abbodi1406](https://github.com/abbodi1406) from Visual C++ reddist software
+[Fleex255](https://github.com/Fleex255) from PolicyPlus software
 
 ## Credits
 This script is inspired by optimizations suggested in the Melody video.
 
 ## License
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/Syrusaki/Melody-s-automated-script-from-video/blob/main/LICENSE.md) file for details.
