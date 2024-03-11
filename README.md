@@ -33,7 +33,7 @@ I recommend installing Windows without the internet to avoid creating a profile 
 4. Reboot the system after the script finishes for changes to take effect.
 5. On boot, a CMD prompt will appear to finalize the script, wait for it to finish and reboot again
 
-## Usage tutorial in video
+## Usage in video
 [video version](https://youtu.be/fBckuUH2ITQ)
 
 ## Disclaimer
