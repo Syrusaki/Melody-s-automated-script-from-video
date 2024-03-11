@@ -41,6 +41,8 @@ I recommend installing Windows without the internet to avoid creating a profile 
 
 [Fleex255](https://github.com/Fleex255) from PolicyPlus software
 
+[Open-shell](https://github.com/Open-Shell) from Open-shell start menu
+
 ## Credits
 This script is inspired by optimizations suggested in the [Melody video](https://youtu.be/F_4BPuqn0_o?si=fORdG5zBgEY3799F).
 
