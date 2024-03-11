@@ -27,8 +27,9 @@ I recommend installing Windows without the internet to avoid creating a profile 
 ## Usage
 1. Clone or download the script.
 2. Run the script as an administrator.
-3. Follow the on-screen instructions to customize browser and OpenShell installation.
+3. Follow the on-screen instructions.
 4. Reboot the system after the script finishes for changes to take effect.
+5. On boot, a CMD prompt will appear to finalize the script, wait for it to finish.
 
 ## Disclaimer
 - Use this script at your own risk. Always ensure you have backups of important data before making system changes.
@@ -36,10 +37,11 @@ I recommend installing Windows without the internet to avoid creating a profile 
 
 ## Software credits
 [abbodi1406](https://github.com/abbodi1406) from Visual C++ reddist software
+
 [Fleex255](https://github.com/Fleex255) from PolicyPlus software
 
 ## Credits
-This script is inspired by optimizations suggested in the Melody video.
+This script is inspired by optimizations suggested in the [Melody video](https://youtu.be/F_4BPuqn0_o?si=fORdG5zBgEY3799F).
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](https://github.com/Syrusaki/Melody-s-automated-script-from-video/blob/main/LICENSE.md) file for details.
