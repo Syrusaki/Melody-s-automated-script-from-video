@@ -26,6 +26,7 @@ I recommend installing Windows without the internet to avoid creating a profile 
 - Optimizes power plan settings.
 
 ## Usage
+0. Disable defender before using this script.
 1. Clone or download the script and regedit.
 2. Run the script as an administrator.
 3. Follow the on-screen instructions.
