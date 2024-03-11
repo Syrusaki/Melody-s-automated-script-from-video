@@ -1,2 +1,44 @@
-# Melody-s-automated-script-from-video
->
+# Melody's Windows Post-Format Optimization Script
+
+## Overview
+This script is designed to accelerate the post-formatting process for Windows systems. It automates various optimization tasks inspired by the [Melody video](https://youtu.be/F_4BPuqn0_o?si=fORdG5zBgEY3799F), excluding service deactivation, which varies for each Windows version and must be done manually by the user.
+
+## Recommendation
+I recommend installing Windows without the internet to avoid creating a profile using a Microsoft account, and if possible, already having a video driver on a separate partition, as Windows Update will install an older version. After installation, you can connect to the network and wait for Windows Update to update whatever is necessary, so you can run the script without any problems
+
+## Features
+- Enables PowerShell unrestricted mode.
+- Installs DirectX Graphic Tool.
+- Disables Windows Update and related processes.
+- Allows the user to choose and install a browser (Thorium, Firefox Mercury, or Brave).
+- Offers the option to install OpenShell and apply Melody's profile.
+- Optimizes mouse and keyboard settings.
+- Disables Security and Maintenance notifications.
+- Adjusts Virtual Memory settings.
+- Configures visual settings.
+- Modifies various registry settings for performance enhancement.
+- Apply the gpedit settings.
+- Installs redistributables like Visual C++, DirectX, and .NET Frameworks.
+- Sets firewall inbound settings.
+- Grants permissions to system folders.
+- Offers internet tweaks specific to Windows 10 or 11.
+- Optimizes power plan settings.
+
+## Usage
+1. Clone or download the script.
+2. Run the script as an administrator.
+3. Follow the on-screen instructions to customize browser and OpenShell installation.
+4. Reboot the system after the script finishes for changes to take effect.
+
+## Disclaimer
+- Use this script at your own risk. Always ensure you have backups of important data before making system changes.
+- The script may have different effects depending on your system configuration and version.
+
+## Softwares credits
+[abbodi1406](https://github.com/abbodi1406) from Visual C++ reddist
+
+## Credits
+This script is inspired by optimizations suggested in the Melody video.
+
+## License
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE.md) file for details.
