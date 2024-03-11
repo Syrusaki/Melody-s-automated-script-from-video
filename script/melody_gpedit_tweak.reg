@@ -1,0 +1,90 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System]
+"VerboseStatus"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\AppV\CEIP]
+"CEIPEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\FVE]
+"DisableExternalDMAUnderLock"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Main]
+"DEPOff"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\SQM]
+"DisableCustomerImprovementProgram"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Messenger\Client]
+"CEIP"=dword:00000002
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\MicrosoftEdge\PhishingFilter]
+"EnabledV9"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\SQMClient\Windows]
+"CEIPEnable"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender Security Center\Notifications]
+"DisableNotifications"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender Security Center\Systray]
+"HideSystray"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows Defender]
+"AllowFastServiceStartup"=dword:00000000
+"DisableAntiSpyware"=dword:00000001
+"DisableRoutinelyTakingAction"=dword:00000001
+"ServiceKeepAlive"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\software\policies\microsoft\windows defender\smartscreen]
+"configureappinstallcontrol"=-
+"ConfigureAppInstallControlEnabled"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\010103000F0000F0010000000F0000F0C967A3643C3AD745950DA7859209176EF5B87C875FA20DF21951640E807D7C24]
+"Category"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\010103000F0000F0020000000F0000F0ABA0226144020107D469B778399BF3083A7EBB37586084F5B7A71A633E24B5AF]
+"Category"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\CurrentVersion\NetworkList\Signatures\010103000F0000F0080000000F0000F00D3A0C03D8FC21D118DCB2A70CD9BA38C66ACEA68A73387E5683625586A560F8]
+"Category"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows NT\SystemRestore]
+"DisableConfig"=dword:00000001
+"DisableSR"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\AppCompat]
+"AITEnable"=dword:00000000
+"DisableInventory"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\DataCollection]
+"AllowTelemetry"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\software\policies\microsoft\windows\deviceguard]
+"configuresystemguardlaunch"=-
+"hypervisorenforcedcodeintegrity"=-
+"lsacfgflags"=-
+"requireplatformsecurityfeatures"=-
+"EnableVirtualizationBasedSecurity"=dword:00000000
+"HVCIMATRequired"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Explorer]
+"NoDataExecutionPrevention"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\PowerShell]
+"EnableScripts"=dword:00000001
+"ExecutionPolicy"="Unrestricted"
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\QoS]
+"Tcp Autotuning Level"="Normal"
+
+[HKEY_LOCAL_MACHINE\software\policies\microsoft\windows\system]
+"shellsmartscreenlevel"=-
+"DisableHHDEP"=dword:00000001
+"EnableSmartScreen"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\Windows Error Reporting]
+"Disabled"=dword:00000001
+"DontSendAdditionalData"=dword:00000001
+"LoggingDisabled"=dword:00000001
+
