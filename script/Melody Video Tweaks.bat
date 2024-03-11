@@ -306,8 +306,21 @@ powershell bcdedit /set disableelamdrivers Yes >nul
 powershell bcdedit /set allowedinmemorysettings 0x0 >nul
 powershell bcdedit /set loadoptions "DISABLE-LSA-ISO,DISABLE-VBS" >nul
 powershell bcdedit /set pciexpress forceddisable >nul
-powershell bcdedit /set nx alwaysoff >nul
-timeout /t 1 >nul
+
+echo You play valorant?
+echo 1. Yes
+echo 0. No
+
+set /p choice=Enter the number of the desired option and press Enter: 
+
+if "%choice%"=="1" (
+    powershell bcdedit /set nx AlwaysOn >nul
+)
+) else if "%choice%"=="0" (
+    powershell bcdedit /set nx AlwaysOff >nul
+) else (
+    echo Invalid option. Please choose a valid option.
+)
 cls
 
 call :melodyLogo
