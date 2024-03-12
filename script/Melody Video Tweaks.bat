@@ -1,4 +1,5 @@
 @echo off
+set Version=1.5
 title Melody Video Tweaks
 color 03
 SetLocal EnableExtensions EnableDelayedExpansion
@@ -142,7 +143,13 @@ call :melodyLogo
 echo Uninstalling OneDrive if exist...
 REM (Thx for Amitxv)
 timeout /t 2 >nul
-for %a in ("SysWOW64" "System32") do (if exist "%windir%\%~a\OneDriveSetup.exe" ("%windir%\%~a\OneDriveSetup.exe" /uninstall)) && reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f > nul 2>&1
+for %%a in (SysWOW64 System32) do (
+    if exist "%windir%\%%a\OneDriveSetup.exe" (
+        "%windir%\%%a\OneDriveSetup.exe" /uninstall
+    )
+)
+
+reg delete "HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace\{018D5C66-4533-4307-9B53-224DE2ED1FE6}" /f > nul 2>&1
 cls
 
 call :melodyLogo
@@ -643,7 +650,7 @@ echo  \/ /    #+#       #+# #+#        #+#        #+#    #+# #+#    #+#    #+#  
 echo  / /\    ###       ### ########## ##########  ########  #########     ###        / /\ 
 echo / /\ \                                                                          / /\ \
 echo \ \/ /                                                                          \ \/ /
-echo  \/ /    made by rotina                                                          \/ / 
+echo  \/ /    made by rotina                                        Version: %Version%      \/ / 
 echo  / /\.--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--..--./ /\ 
 echo / /\ \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \.. \/\ \
 echo \ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `'\ `' /
