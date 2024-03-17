@@ -255,7 +255,7 @@ set /p choice=Enter the number of the desired option and press Enter:
 if "%choice%"=="1" (
     echo Applying Melody Profile...
 	timeout /t 1	
-	if not exist "%CD%Melody.xml" (
+	if not exist "%CD%\Melody.xml" (
     @echo Error: You don't have xml profile
     pause
     exit /b 1
