@@ -59,7 +59,6 @@ cls
 
 call :melodyLogo
 echo You want to disable Windows Update?
-echo Choose a browser to download:
 echo 1. Yes
 echo 2. No
 
