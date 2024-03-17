@@ -1,5 +1,5 @@
 @echo off
-set Version=1.5
+set Version=1.6
 title Melody Video Tweaks
 color 03
 SetLocal EnableExtensions EnableDelayedExpansion
@@ -58,85 +58,95 @@ dism /online /add-capability /capabilityname:Tools.Graphics.DirectX~~~~0.0.1.0
 cls
 
 call :melodyLogo
-echo Disable Windows Update
-timeout /t 2 >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EOSnotify.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\InstallAgent.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MusNotification.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MusNotificationUx.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\remsh.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SihClient.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\UpdateAssistant.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\upfc.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\UsoClient.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WaaSMedic.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WaasMedicAgent.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Windows10Upgrade.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Windows10UpgraderApp.exe" /v "Debugger" /d "/" /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoWindowsUpdate" /t REG_DWORD /d 1 /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate" /v "OSUpgrade" /t REG_DWORD /d 0 /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate" /v "ReservationsAllowed" /t REG_DWORD /d 0 /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsUpdate\UX\Settings" /v "TrayIconVisibility" /t REG_DWORD /d 0 /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft" /v "WindowsStore" /t REG_DWORD /d 1 /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate" /v "DisableOSUpgrade" /t REG_DWORD /d 1 /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate" /v "DisableWindowsUpdateAccess" /t REG_DWORD /d 1 /f >nul
-reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU" /v "NoAutoUpdate" /t REG_DWORD /d 1 /f >nul
-reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\DoSvc" /v "Start" /t REG_DWORD /d 4 /f >nul
-reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\UsoSvc" /v "Start" /t REG_DWORD /d 4 /f >nul
-reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\WaaSMedicSvc" /v "Start" /t REG_DWORD /d 4 /f >nul
-reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\wuauserv" /v "Start" /t REG_DWORD /d 4 /f >nul
-sc stop DoSvc >nul
-sc config DoSvc start= disabled >nul
+echo You want to disable Windows Update?
+echo Choose a browser to download:
+echo 1. Yes
+echo 2. No
 
-sc stop UsoSvc >nul
-sc config UsoSvc start= disabled >nul
+set /p choice=Enter the number of the desired option and press Enter:
 
-sc stop WaaSMedicSvc >nul
-sc config WaaSMedicSvc start= disabled >nul
-
-sc stop wuauserv >nul
-sc config wuauserv start= disabled >nul
+if "%choice%"=="1" (
+	timeout /t 2 >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\EOSnotify.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\InstallAgent.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MusNotification.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\MusNotificationUx.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\remsh.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\SihClient.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\UpdateAssistant.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\upfc.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\UsoClient.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WaaSMedic.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\WaasMedicAgent.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Windows10Upgrade.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\Windows10UpgraderApp.exe" /v "Debugger" /d "/" /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\Explorer" /v "NoWindowsUpdate" /t REG_DWORD /d 1 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate" /v "OSUpgrade" /t REG_DWORD /d 0 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\WindowsUpdate" /v "ReservationsAllowed" /t REG_DWORD /d 0 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Microsoft\WindowsUpdate\UX\Settings" /v "TrayIconVisibility" /t REG_DWORD /d 0 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft" /v "WindowsStore" /t REG_DWORD /d 1 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate" /v "DisableOSUpgrade" /t REG_DWORD /d 1 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate" /v "DisableWindowsUpdateAccess" /t REG_DWORD /d 1 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate\AU" /v "NoAutoUpdate" /t REG_DWORD /d 1 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\DoSvc" /v "Start" /t REG_DWORD /d 4 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\UsoSvc" /v "Start" /t REG_DWORD /d 4 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\WaaSMedicSvc" /v "Start" /t REG_DWORD /d 4 /f >nul
+	reg add "HKEY_LOCAL_MACHINE\System\ControlSet001\Services\wuauserv" /v "Start" /t REG_DWORD /d 4 /f >nul
+	sc stop DoSvc >nul
+	sc config DoSvc start= disabled >nul
+	
+	sc stop UsoSvc >nul
+	sc config UsoSvc start= disabled >nul
+	
+	sc stop WaaSMedicSvc >nul
+	sc config WaaSMedicSvc start= disabled >nul
+	
+	sc stop wuauserv >nul
+	sc config wuauserv start= disabled >nul
+	cls
+) else if "%choice%"=="0" (
+	echo Skip disable Windows Update
+	timeout /t 2 >nul
+) else (
+    echo Invalid option. Please choose a valid option.
+)
 cls
-
+	
 call :melodyLogo
 echo Disable Windows Defender
 timeout /t 2 >nul
-echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend" /v "Start" /t REG_DWORD /d 4 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v "Start" /t REG_DWORD /d 4 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc" /v "Start" /t REG_DWORD /d 4 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Sense" /v "Start" /t REG_DWORD /d 4 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc" /v "Start" /t REG_DWORD /d 4 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WinDefend" /v "Start" /t REG_DWORD /d 4 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v "Start" /t REG_DWORD /d 4 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\WdNisSvc" /v "Start" /t REG_DWORD /d 4 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Sense" /v "Start" /t REG_DWORD /d 4 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\wscsvc" /v "Start" /t REG_DWORD /d 4 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKLM\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v "Start" /t REG_DWORD /d 4 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKLM\SYSTEM\CurrentControlSet\Services\SecurityHealthService" /v "Start" /t REG_DWORD /d 4 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableRoutinelyTakingAction" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "ServiceKeepAlive" /t REG_DWORD /d 0 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableAntiSpyware" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "DisableRoutinelyTakingAction" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender" /v "ServiceKeepAlive" /t REG_DWORD /d 0 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableBehaviorMonitoring" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableIOAVProtection" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableOnAccessProtection" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableRealtimeMonitoring" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableBehaviorMonitoring" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableIOAVProtection" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableOnAccessProtection" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Real-Time Protection" /v "DisableRealtimeMonitoring" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Reporting" /v "DisableEnhancedNotifications" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender\Reporting" /v "DisableEnhancedNotifications" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications" /v "DisableNotifications" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Defender Security Center\Notifications" /v "DisableNotifications" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotification" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
-echo reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotificationOnLockScreen" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotification" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
+echo reg add "HKEY_CURRENT_USER\Software\Policies\Microsoft\Windows\CurrentVersion\PushNotifications" /v "NoToastApplicationNotificationOnLockScreen" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKLM\SOFTWARE\Policies\Microsoft\MRT" /v "DontReportInfectionInformation" /t REG_DWORD /d 1 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKLM\SOFTWARE\Policies\Microsoft\MRT" /v "DontReportInfectionInformation" /t REG_DWORD /d 1 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /v "EnableSmartScreen" /t REG_DWORD /d 0 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKLM\SOFTWARE\Policies\Microsoft\Windows\System" /v "EnableSmartScreen" /t REG_DWORD /d 0 /f ^>nul >> "%temp%\defender.bat"
 echo. >nul >> "%temp%\defender.bat"
-echo reg add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter" /v "DontReportInfectionInformation" /t REG_DWORD /d 0 /f >nul >> "%temp%\defender.bat"
+echo reg add "HKLM\SOFTWARE\Policies\Microsoft\MicrosoftEdge\PhishingFilter" /v "DontReportInfectionInformation" /t REG_DWORD /d 0 /f ^>nul >> "%temp%\defender.bat"
 move /y "%temp%\defender.bat" "C:\defender.bat" >nul
-curl -g -k -L -# -o "C:\PowerRun.exe" "https://cdn.discordapp.com/attachments/925799528114847794/1213164680105828383/PowerRun_x64.exe?ex=65f47aa7&is=65e205a7&hm=c1099817a7fc35c733b13c985efb38d177167db6c6e3be5ccf33e217236bb880&"
-start /wait C:\PowerRun.exe defender.bat
-echo Press any key to continue after import reg
-pause > nul
-del /F /Q C:\PowerRun.exe
-del /F /Q C:\defender.bat
+start "" MinSudo.exe --NoLogo --TrustedInstaller --Privileged cmd /c "C:\defender.bat"
+timeout /t 1 >nul
 cls
 
 call :melodyLogo
@@ -244,17 +254,14 @@ echo 0. No
 set /p choice=Enter the number of the desired option and press Enter: 
 
 if "%choice%"=="1" (
-    echo Downloading XML Profile...
-	timeout /t 1
-    REM Command to download XML Profile
-	curl -g -k -L -# -o "%temp%\Melody.xml" "https://cdn.discordapp.com/attachments/925872253487444059/1216836400574500884/Melody.xml?ex=6601d635&is=65ef6135&hm=763e4097046624c0a7745c31396c0aa460f863e3d35919d3babfdd61c3054620&"
-if not exist "%temp%\Melody.xml" (
-    @echo Error: Failed to download XMP Profile.
+    echo Applying Melody Profile...
+	timeout /t 1	
+	if not exist "%CD%Melody.xml" (
+    @echo Error: You don't have xml profile
     pause
     exit /b 1
 )
-"C:\Program Files\Open-Shell\StartMenu.exe" -xml %temp%\Melody.xml
-del /f "%temp%\Melody.xml" >nul
+"C:\Program Files\Open-Shell\StartMenu.exe" -xml "%CD%\Melody.xml"
 ) else if "%choice%"=="0" (
     echo Skip XML Profile install...
 	timeout /t 2 >nul
@@ -314,7 +321,7 @@ powershell bcdedit /set allowedinmemorysettings 0x0 >nul
 powershell bcdedit /set loadoptions "DISABLE-LSA-ISO,DISABLE-VBS" >nul
 powershell bcdedit /set pciexpress forceddisable >nul
 
-echo You play valorant?
+echo You play Valorant?
 echo 1. Yes
 echo 0. No
 
@@ -388,35 +395,33 @@ cls
 call :melodyLogo
 echo Powerplan settings...
 timeout /t 1 >nul
-rem If the plan doesn't exist, add it and activate it
-powercfg -list | findstr /C:"Ultimate Performance" > nul
-if %errorlevel% neq 0 (
-    echo The "Ultimate Performance" power plan was not found.
-    echo Adding and activating the "Ultimate Performance" power plan...
-    powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-    if %errorlevel% equ 0 (
-        echo The "Ultimate Performance" power plan has been successfully added and activated.
-    ) else (
-        echo Failed to add the "Ultimate Performance" power plan.
-        echo Applying the "High Performance" power plan...
-        powercfg -setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
-        if %errorlevel% equ 0 (
-            echo The "High Performance" power plan has been applied.
-        ) else (
-            echo Failed to apply the "High Performance" power plan.
-        )
-    )
+REM Activate High Performance power plan
+powercfg /setactive 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+
+REM Disable USB 3 Link Power Management
+powercfg /setacvalueindex scheme_current 2a737441-1930-4402-8d77-b2bebba308a3 d4e98f31-5ffe-4ce1-be31-1b38b384c009 0
+
+REM Disable USB Selective Suspend
+powercfg /setacvalueindex scheme_current 2a737441-1930-4402-8d77-b2bebba308a3 48e6b7a6-50f5-4782-a5d4-53bb8f07e226 0
+
+REM Set Processor performance core parking min cores to 100
+powercfg /setacvalueindex scheme_current 54533251-82be-4824-96c1-47b60b740d00 0cc5b647-c1df-4637-891a-dec35c318583 100
+powercfg /setacvalueindex scheme_current 54533251-82be-4824-96c1-47b60b740d00 0cc5b647-c1df-4637-891a-dec35c318584 100
+
+REM Ask user about CPU frequency mode
+set /p freqmode="Are you using static frequency (if u not sure, select no) (y/n)? "
+if /i "%freqmode%"=="y" (
+    REM Set Processor performance time check interval to 5000
+    powercfg /setacvalueindex scheme_current 54533251-82be-4824-96c1-47b60b740d00 4d2b0152-7d5c-498b-88e2-34345392a2c5 5000
 ) else (
-    echo The "Ultimate Performance" power plan already exists.
-    echo Activating the "Ultimate Performance" power plan...
-    powercfg -setactive e9a42b02-d5df-448d-aa00-03f14749eb61
-    if %errorlevel% equ 0 (
-        echo The "Ultimate Performance" power plan has been activated.
-    ) else (
-        echo Failed to activate the "Ultimate Performance" power plan.
-    )
+    echo Please set a static clock frequency for better performance.
+	timeout /t 2 >nul
 )
+
+REM Disabling hibernation
 powercfg -h off >nul
+REM Update the power plan
+powercfg /setactive scheme_current
 cls
 
 call :melodyLogo
@@ -477,20 +482,20 @@ echo Installing Visual C++
 echo.
 echo Press OK on any popups
 timeout /t 1 >nul
-powershell Invoke-WebRequest "https://github.com/abbodi1406/vcredist/releases/download/v0.78.0/VisualCppRedist_AIO_x86_x64.exe" -OutFile "%temp%\VisualCppRedist_AIO_x86_x64.exe" >nul 2>&1
+powershell Invoke-WebRequest "https://github.com/abbodi1406/vcredist/releases/download/v0.79.0/VisualCppRedist_AIO_x86_x64.exe" -OutFile "%temp%\VisualCppRedist_AIO_x86_x64.exe" >nul 2>&1
 if not exist "%temp%\VisualCppRedist_AIO_x86_x64.exe" (
     @echo Error: Failed to download Visual C++ redistributable package.
     pause
     exit /b 1
 )
-%temp%\VisualCppRedist_AIO_x86_x64.exe /y
+%temp%\VisualCppRedist_AIO_x86_x64.exe /aiA /gm2
 del /f "%temp%\VisualCppRedist_AIO_x86_x64.exe"
 cls
 
 call :melodyLogo
 echo Installing DirectX...
 timeout /t 2 >nul
-curl -g -k -L -# -o "C:\dxwebsetup.exe" "https://cdn.discordapp.com/attachments/925799528114847794/1212534540837457952/dxwebsetup.exe?ex=65f22fca&is=65dfbaca&hm=7157c5a9eca530106c307c63f64390d81386e6c17492df28632a3eaada526871&"
+curl -g -k -L -# -o "C:\dxwebsetup.exe" "https://download.microsoft.com/download/1/7/1/1718CCC4-6315-4D8E-9543-8E28A4E18C4C/dxwebsetup.exe"
 start /wait C:\dxwebsetup.exe /Q
 del /F /Q C:\dxwebsetup.exe
 cls
@@ -570,7 +575,7 @@ cls
 call :melodyLogo
 echo Installing XNA...
 timeout /t 2 >nul
-curl -g -k -L -# -o "C:\XNA.msi" "https://cdn.discordapp.com/attachments/925799528114847794/1212541682080419840/xnafx40_redist.msi?ex=65f23670&is=65dfc170&hm=b12e703cc65a3bdb75ed9c184d8cf120954355bbda5e392d7de288f58c04406b&"
+curl -g -k -L -# -o "C:\XNA.msi" "https://download.microsoft.com/download/A/C/2/AC2C903B-E6E8-42C2-9FD7-BEBAC362A930/xnafx40_redist.msi"
 start /wait C:\XNA.msi /Q
 del /F /Q C:\XNA.msi
 cls
@@ -580,7 +585,6 @@ echo Disabling startup event trace sessions...
 timeout /t 2 >nul
 echo @echo off > "%temp%\perfmon_temp.bat"
 echo echo Disabling startup event trace sessions... >> "%temp%\perfmon_temp.bat"
-echo timeout /t 2 >nul >> "%temp%\perfmon_temp.bat"
 echo for /f "tokens=*" %%%%b in ('reg query "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger"') do ( >> "%temp%\perfmon_temp.bat"
 echo     if /i "%%%%b" neq "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\WMI\Autologger" ( >> "%temp%\perfmon_temp.bat"
 echo         reg add "%%%%b" /v "Start" /t REG_DWORD /d 0 /f ^>nul 2^>^&1 >> "%temp%\perfmon_temp.bat"
@@ -591,13 +595,11 @@ echo             echo Unable to add or set the DWORD Start value to 0 at %%%%b. 
 echo         ) >> "%temp%\perfmon_temp.bat"
 echo     ) >> "%temp%\perfmon_temp.bat"
 echo ) >> "%temp%\perfmon_temp.bat"
+echo cls >> "%temp%\perfmon_temp.bat"
 
 move /y "%temp%\perfmon_temp.bat" "C:\perfmon.bat" >nul
-curl -g -k -L -# -o "C:\PowerRun.exe" "https://cdn.discordapp.com/attachments/925799528114847794/1213164680105828383/PowerRun_x64.exe?ex=65f47aa7&is=65e205a7&hm=c1099817a7fc35c733b13c985efb38d177167db6c6e3be5ccf33e217236bb880&"
-start /wait C:\PowerRun.exe perfmon.bat
-echo Press any key to continue after new cmd close
-pause > nul
-del /F /Q C:\PowerRun.exe
+start "" MinSudo.exe --NoLogo --TrustedInstaller --Privileged cmd /c "C:\perfmon.bat"
+timeout /t 1 >nul
 del /F /Q C:\perfmon.bat
 cls
 
@@ -624,7 +626,7 @@ call :melodyLogo
 echo Applying Gpedit Tweaks...
 timeout /t 2 >nul
 powershell Invoke-WebRequest https://github.com/Fleex255/PolicyPlus/releases/download/June2021/PolicyPlus.exe -OutFile "%temp%\PolicyPlus.exe" >nul 2>&1
-echo On PolicyPlus click on share tab, IMPORT REG, select COMPUTER, select "melody_gpedit_tweaks.reg" on script folder, import and make Ctrl + S to save modifications and close
+echo On PolicyPlus click on share tab, IMPORT REG, select COMPUTER, select "gpedit.reg" on script folder, import and make Ctrl + S to save modifications and close
 %temp%\PolicyPlus.exe
 echo Press any key to continue...
 pause > nul
