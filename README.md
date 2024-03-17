@@ -28,8 +28,8 @@ I recommend installing Windows without the internet to avoid creating a profile 
 
 ## Usage
 0. Disable defender before using this script.
-1. Clone or download the script and regedit.
-2. Run the script as an administrator.
+1. Clone or download the zip file.
+2. Run the script as an administrator inside the extracted folder.
 3. Follow the on-screen instructions.
 4. Reboot the system after the script finishes for changes to take effect.
 5. On boot, a CMD prompt will appear to finalize the script, wait for it to finish and reboot again
